@@ -7,7 +7,7 @@ public class Score : MonoBehaviour {
     public GUIText text;
     public int score;
 
-    private void Start()
+    public void Start()
     {
         score = 0;
         UpdateScore();

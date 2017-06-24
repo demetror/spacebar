@@ -1,4 +1,17 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/preproejct/2 players.unity
+=======
+- path: Assets/preproejct/menu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/preproejct/menu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/preproejct/menu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/preproejct/end screen.unity
+>>>>>>> d0d2107a76da007e48bc000fae8a27fa65b57514
   isLoaded: 1
   isActive: 1

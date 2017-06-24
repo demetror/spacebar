@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Boss1 : MonoBehaviour {
 
@@ -51,5 +53,12 @@ public class Boss1 : MonoBehaviour {
             }
         }
     }
-   
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(3);
+
+    }
 }
+   
+
