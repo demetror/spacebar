@@ -9,15 +9,20 @@ public class Move : MonoBehaviour {
 
     public Vector2 direction = new Vector2(0, 1);
 
+    public bool isBoss = false;
     private Vector2 movement;
     // Use this for initialization
 
     private WeaponShoot[] weapons;
+    private Rigidbody2D[] rigidbodys;
+    private Health[] lifes;
 
     void Awake()
     {
         // Récupération de toutes les armes de l'ennemi
         weapons = GetComponentsInChildren<WeaponShoot>();
+        rigidbodys = GetComponentsInChildren<Rigidbody2D>();
+        lifes = GetComponentsInChildren<Health>();
     }
 
     void Start () {
@@ -26,29 +31,47 @@ public class Move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        movement = new Vector2(
-          speed.x * direction.x,
-          speed.y * direction.y);
-
-        foreach (WeaponShoot weapon in weapons)
+        if (isBoss && Camera.main.transform.position.y >= transform.position.y)
         {
-            // On fait tirer toutes les armes automatiquement
-            if (weapon != null && weapon.CanAttack)
+            movement.y = 1.0F;
+            foreach (Health rigid in lifes)
             {
-                weapon.Attack(true);
+                // On fait tirer toutes les armes automatiquement
+                if (rigid != null)
+                {
+                    rigid.isInvincible = false;
+                }
+            }
+        }
+        else
+        {
+            movement = new Vector2(
+            speed.x * direction.x,
+            speed.y * direction.y);
+        }
+        if (!isBoss)
+        {
+            foreach (WeaponShoot weapon in weapons)
+            {
+                // On fait tirer toutes les armes automatiquement
+                if (weapon != null && weapon.CanAttack)
+                {
+                    weapon.Attack(true, 0);
+                }
             }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        Player player = collider.gameObject.GetComponent<Player>();
-        if (player != null)
-            Destroy(gameObject);
-    }
-
         private void FixedUpdate()
     {
+        foreach (Rigidbody2D rigid in rigidbodys)
+        {
+            // On fait tirer toutes les armes automatiquement
+            if (rigid != null)
+            {
+                rigid.velocity = movement;
+            }
+        }
         GetComponent<Rigidbody2D>().velocity = movement;
     }
 }

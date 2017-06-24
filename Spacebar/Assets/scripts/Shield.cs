@@ -25,7 +25,7 @@ public class Shield : MonoBehaviour
             {
                 if (weapon != null && weapon.enabled && weapon.CanAttack)
                 {
-                    weapon.Attack(false);
+                    weapon.Attack(false, 0);
                 }
             }
         }

@@ -12,6 +12,11 @@ public class WeaponShoot : MonoBehaviour {
     public float shootingRate = 0.25f;
     public float shootingSpeed = 5;
     public float shootingLife = 1;
+    public int damage = 1;
+    public float rotation = 0;
+    public float savedY = 0;
+    public bool activate = true;
+    public int id = 0;
 
     //--------------------------------
     // 2 - Rechargement
@@ -22,6 +27,7 @@ public class WeaponShoot : MonoBehaviour {
     void Start()
     {
         shootCooldown = 0f;
+        rotation = transform.rotation.eulerAngles.z;
     }
 
     void Update()
@@ -32,9 +38,15 @@ public class WeaponShoot : MonoBehaviour {
         }
     }
 
-    public void Attack(bool isEnemy)
+    public void setActivate(bool activated, int id_tmp)
     {
-        if (CanAttack)
+        if (id == id_tmp)
+        activate = activated;
+    }
+
+    public void Attack(bool isEnemy, int rotate)
+    {
+        if (CanAttack && activate)
         {
             shootCooldown = shootingRate;
 
@@ -48,14 +60,16 @@ public class WeaponShoot : MonoBehaviour {
             Shoot shot = shotTransform.gameObject.GetComponent<Shoot>();
             if (shot != null)
             {
+                GetComponent<Rigidbody2D>().MoveRotation(rotation);
                 shot.life = shootingLife;
                 shot.speed.y = shootingSpeed;
                 shot.isEnemyShot = isEnemy;
+                shot.damage = damage;
                 shot.direction = this.transform.up; // ici la droite sera le devant de notre objet
+                rotation = rotation + rotate;
             }
         }
     }
-
     /// <summary>
     /// L'arme est chargée ?
     /// </summary>
@@ -66,7 +80,5 @@ public class WeaponShoot : MonoBehaviour {
             return shootCooldown <= 0f;
         }
     }
-
-
 
 }

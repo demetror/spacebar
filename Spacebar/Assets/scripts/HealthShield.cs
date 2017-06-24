@@ -29,7 +29,7 @@ public class HealthShield : MonoBehaviour
             // Tir allié
             if (shot.isEnemyShot != isEnemy && !shieldBreak)
             {
-                hp -= shot.damage * 5;
+                hp -= 5;
 
                 // Destruction du projectile
                 // On détruit toujours le gameObject associé

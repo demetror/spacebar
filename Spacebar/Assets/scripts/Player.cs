@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
             if (weapon != null)
             {
                 // false : le joueur n'est pas un ennemi
-                weapon.Attack(false);
+                weapon.Attack(false, 0);
             }
         var dist = (transform.position - Camera.main.transform.position).z;
 

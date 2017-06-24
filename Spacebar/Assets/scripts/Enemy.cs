@@ -47,13 +47,6 @@ public class Enemy : MonoBehaviour
         else
         {
             // On fait tirer toutes les armes automatiquement
-            foreach (WeaponShoot weapon in weapons)
-            {
-                if (weapon != null && weapon.enabled && weapon.CanAttack)
-                {
-                    weapon.Attack(true);
-                }
-            }
 
             // 4 - L'ennemi n'a pas été détruit, il faut faire le ménage
             if (GetComponent<Renderer>().IsVisibleFrom(Camera.main) == false)
