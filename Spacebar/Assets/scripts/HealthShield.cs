@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthShield : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class HealthShield : MonoBehaviour
     /// Points de vies
     /// </summary>
     public int hp = 1;
+    public Slider hpbar;
     int heal = 0;
     /// <summary>
     /// Ennemi ou joueur ?
@@ -70,5 +72,6 @@ public class HealthShield : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("True", typeof(Sprite)) as Sprite;
         }
+        hpbar.value = hp;
     }
 }
