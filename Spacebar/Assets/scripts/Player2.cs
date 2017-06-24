@@ -23,7 +23,7 @@ public class Player2 : MonoBehaviour {
           speed.y * inputY);
 
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
-        Shield shield = GetComponentInChildren<Shield>();
+        Shield2 shield = GetComponentInChildren<Shield2>();
         if (Input.GetButton("Fire2"))
         {
             shield.Protect(movement);
