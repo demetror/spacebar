@@ -33,7 +33,7 @@ public class Move : MonoBehaviour {
 	void Update () {
         if (isBoss && Camera.main.transform.position.y >= transform.position.y)
         {
-            movement.y = 1.0F;
+            movement.y = 3.0F;
             foreach (Health rigid in lifes)
             {
                 // On fait tirer toutes les armes automatiquement

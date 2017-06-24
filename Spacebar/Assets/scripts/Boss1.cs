@@ -9,11 +9,13 @@ public class Boss1 : MonoBehaviour {
     private int rotate = 1;
     private int time_rotate = 0;
     public Slider hpbar;
+    public int maxHP = 0;
 
     void Awake()
     {
         // Récupération de toutes les armes de l'ennemi
         weapons = GetComponentsInChildren<WeaponShoot>();
+        maxHP = GetComponent<Health>().hp;
     }
 
     void Update()
@@ -38,11 +40,11 @@ public class Boss1 : MonoBehaviour {
                     weapon.Attack(true, rotate);
                     
                 }
-                if (GetComponent<Health>().hp < 50)
+                if (GetComponent<Health>().hp < maxHP / 2)
                 {
                     weapon.setActivate(true, 1);
                 }
-                if (GetComponent<Health>().hp < 20)
+                if (GetComponent<Health>().hp < maxHP / 3)
                 {
                     weapon.setActivate(true, 2);
                 }
