@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/preproejct/2 players.unity
+- path: Assets/preproejct/menu.unity
   isLoaded: 1
   isActive: 1
