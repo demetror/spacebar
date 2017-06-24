@@ -61,7 +61,7 @@ public class HealthShield : MonoBehaviour
         if (heal >= 30)
         {
             if (hp < 100)
-            hp++;
+            hp = hp + 4;
             heal = 0;
         }
         if (hp >= 70)

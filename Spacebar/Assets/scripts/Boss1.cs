@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss1 : MonoBehaviour {
 
     private WeaponShoot[] weapons;
     private int rotate = 1;
     private int time_rotate = 0;
+    public Slider hpbar;
+
     void Awake()
     {
         // Récupération de toutes les armes de l'ennemi
@@ -26,6 +29,7 @@ public class Boss1 : MonoBehaviour {
         }
         if (!GetComponent<Health>().isInvincible)
         {
+            hpbar.value = GetComponent<Health>().hp;
             foreach (WeaponShoot weapon in weapons)
             {
                 // On fait tirer toutes les armes automatiquement

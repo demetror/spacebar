@@ -2,34 +2,28 @@ Initialize engine version: 5.6.2f1 (a2913c821e27)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon R7 M260X (ID=0x6605)
+    Renderer: AMD Radeon R7 M260 Series (ID=0x6605)
     Vendor:   ATI
     VRAM:     1005 MB
-    Driver:   16.300.2201.0
+    Driver:   22.19.157.3
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.158 seconds
-Platform assembly: C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\gabri\spacebar\Spacebar\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
+Platform assembly: C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Soraaz\Desktop\Projet\spacebar\Spacebar\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.992027 ms
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.344151 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 574.
-Total: 0.374230 ms (FindLiveObjects: 0.038291 ms CreateObjectMapping: 0.023685 ms MarkObjects: 0.307516 ms  DeleteObjects: 0.004342 ms)
-
+UnloadTime: 1.110848 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 6ae8 -> priority: 1 
-  Thread -> id: 6aec -> priority: 1 
+  Thread -> id: 7e40 -> priority: 1 
+  Thread -> id: 7a34 -> priority: 1 
