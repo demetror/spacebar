@@ -10,7 +10,7 @@ public class Score : MonoBehaviour {
     private void Start()
     {
         score = 0;
-        UpdateScore()
+        UpdateScore();
     }
 
     public void  incScore(int add) {
