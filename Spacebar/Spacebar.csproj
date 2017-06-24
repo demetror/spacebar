@@ -94,6 +94,7 @@
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\Player2.cs" />
     <Compile Include="Assets\scripts\RendererExtentions.cs" />
+    <Compile Include="Assets\scripts\Score.cs" />
     <Compile Include="Assets\scripts\ScrollingScript.cs" />
     <Compile Include="Assets\scripts\Shield.cs" />
     <Compile Include="Assets\scripts\Shoot.cs" />
