@@ -22,18 +22,26 @@ public class Player : MonoBehaviour {
           speed.x * inputX,
           speed.y * inputY);
 
-        bool shoot = Input.GetButton("Fire1");
         // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
-
-        if (shoot)
+        Shield shield = GetComponentInChildren<Shield>();
+        if (Input.GetButton("Fire1"))
         {
+            shield.Protect(movement);
+        }
+        if (Input.GetButton("RotaG"))
+        {
+            shield.RotaGauche();
+        }
+        if (Input.GetButton("RotaD"))
+        {
+            shield.RotaDroite();
+        }
             WeaponShoot weapon = GetComponent<WeaponShoot>();
             if (weapon != null)
             {
                 // false : le joueur n'est pas un ennemi
                 weapon.Attack(false);
             }
-        }
         var dist = (transform.position - Camera.main.transform.position).z;
 
         var leftBorder = Camera.main.ViewportToWorldPoint(
