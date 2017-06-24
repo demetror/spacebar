@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-
+    private WeaponShoot[] weapons;
     private Vector2 movement;
     private int rotation = 0;
     // Update is called once per frame
+
+    private void Awake()
+    {
+        weapons = GetComponentsInChildren<WeaponShoot>();
+    }
     void Start()
     {
-
     }
 
     void Update()
     {
+        if (GetComponent<HealthShield>().hp >= 70)
+        {
+            foreach (WeaponShoot weapon in weapons)
+            {
+                if (weapon != null && weapon.enabled && weapon.CanAttack)
+                {
+                    weapon.Attack(false);
+                }
+            }
+        }
         var dist = (transform.position - Camera.main.transform.position).z;
 
         var leftBorder = Camera.main.ViewportToWorldPoint(
@@ -48,7 +62,6 @@ public class Shield : MonoBehaviour
     public void RotaGauche()
     {
         rotation = rotation - 1;
-        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("Circle", typeof(Sprite)) as Sprite;
     }
 
     public void RotaDroite()

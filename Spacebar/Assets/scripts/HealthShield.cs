@@ -8,7 +8,7 @@ public class HealthShield : MonoBehaviour
     /// Points de vies
     /// </summary>
     public int hp = 1;
-
+    int heal = 0;
     /// <summary>
     /// Ennemi ou joueur ?
     /// </summary>
@@ -27,21 +27,48 @@ public class HealthShield : MonoBehaviour
         if (shot != null)
         {
             // Tir allié
-            if (shot.isEnemyShot != isEnemy)
+            if (shot.isEnemyShot != isEnemy && !shieldBreak)
             {
-                hp -= shot.damage;
+                hp -= shot.damage * 5;
 
                 // Destruction du projectile
                 // On détruit toujours le gameObject associé
                 // sinon c'est le script qui serait détruit avec ""this""
-                Destroy(shot.gameObject);
-
-                if (hp <= 0)
-                {
-                    // Destruction !
-                    shieldBreak = true;
-                }
+                shot.isEnemyShot = false;
+                shot.direction.x = shot.direction.x * -1;
+                shot.direction.y = shot.direction.y * -1;
+                shot.GetComponent<SpriteRenderer>().sprite = Resources.Load("Friend", typeof(Sprite)) as Sprite;
             }
+            if (hp <= 0)
+            {
+                hp = 1;
+                // Destruction !
+                shieldBreak = true;
+                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("Broken", typeof(Sprite)) as Sprite;
+            }
+            if (hp >= 30 && shieldBreak)
+            {
+                shieldBreak = false;
+          }
+        }
+    }
+
+    private void Update()
+    {
+        heal++;
+        if (heal >= 30)
+        {
+            if (hp < 100)
+            hp++;
+            heal = 0;
+        }
+        if (hp >= 70)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("yellow", typeof(Sprite)) as Sprite;
+        }
+        else if (hp >= 30)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("True", typeof(Sprite)) as Sprite;
         }
     }
 }

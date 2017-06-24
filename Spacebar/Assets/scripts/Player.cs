@@ -28,11 +28,11 @@ public class Player : MonoBehaviour {
         {
             shield.Protect(movement);
         }
-        if (Input.GetButton("RotaG"))
+        if (Input.GetButton("RotaD"))
         {
             shield.RotaGauche();
         }
-        if (Input.GetButton("RotaD"))
+        if (Input.GetButton("RotaG"))
         {
             shield.RotaDroite();
         }
