@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour {
 
@@ -72,5 +74,13 @@ public class Player : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().velocity = movement;
     }
+
+    private void OnDestroy()
+    {
+        if (Application.loadedLevel == 1)
+            SceneManager.LoadScene(0);  
+
+    }
+
 }
 
