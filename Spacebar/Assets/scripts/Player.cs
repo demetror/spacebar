@@ -21,6 +21,21 @@ public class Player : MonoBehaviour {
         movement = new Vector2(
           speed.x * inputX,
           speed.y * inputY);
+
+        bool shoot = Input.GetButton("Fire1");
+        // Astuce pour ceux sous Mac car Ctrl + flèches est utilisé par le système
+
+        if (shoot)
+        {
+            WeaponShoot weapon = GetComponent<WeaponShoot>();
+            if (weapon != null)
+            {
+                // false : le joueur n'est pas un ennemi
+                weapon.Attack(false);
+            }
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -28,3 +43,4 @@ public class Player : MonoBehaviour {
         GetComponent<Rigidbody2D>().velocity = movement;
     }
 }
+
