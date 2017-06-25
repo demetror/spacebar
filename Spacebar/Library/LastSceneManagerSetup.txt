@@ -2,12 +2,24 @@ sceneSetups:
 - path: Assets/preproejct/menu.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/preproejct/menu.unity
+- path: Assets/preproejct/end screen.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/preproejct/menu.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/preproejct/end screen.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/preproejct/menu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/preproejct/end screen.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/preproejct/menu.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/preproejct/project.unity
   isLoaded: 1
   isActive: 1
